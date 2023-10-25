@@ -1,4 +1,7 @@
-var global_file_rows;
+var global_file_rows; // 读取到的数据
+
+
+
 
 function filed() {
     document.getElementById('files').click(); //模拟点击 

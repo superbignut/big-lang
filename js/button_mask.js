@@ -1,20 +1,20 @@
 
 var isCleared = [false, false, false, false];
-var value_list =["0", "1", "2", "3"];
-                    
+var value_list = ["", "", "", ""];
+
 function mask(buttonElement) {
-    var button_map_id = buttonElement.getAttribute('map_id')
-    var num = Number(button_map_id.charAt(button_map_id.length - 1)) - 1;
-    var map_input = document.getElementById(button_map_id)
-    // console.log(map_input.value);
+    var button_id = buttonElement.id;
+    var num = Number(button_id.charAt(button_id.length - 1)) - 1;
+    var map_input = document.getElementById("input" + (num + 1));
+
     if (isCleared[num] == false) {
-        value_list[num] = map_input.value;
+        buttonElement.style.backgroundColor = '#FFDEAD';
         map_input.value = "";
         isCleared[num] = true;
     }
     else {
-        map_input.value = value_list[num];  
+        buttonElement.style.backgroundColor = "";
+        map_input.value = value_list[num];
         isCleared[num] = false;
     }
-    console.log(num);
 }
